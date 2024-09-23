@@ -1,10 +1,17 @@
 package com.techcards.techcards_api.models;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Data
+@ToString
 @Table(name = "resources")
 public class Resource {
 
@@ -40,6 +47,9 @@ public class Resource {
             inverseJoinColumns = @JoinColumn(name = "tag_id")
     )
     private List<Tag> tags;
+
+    @OneToMany(mappedBy = "resource", cascade = CascadeType.ALL)
+    private List<Comment> comments = new ArrayList<>();
 
 //    @ManyToMany(mappedBy = "favoriteResources")
 //    private List<User> favoritedByUsers;
