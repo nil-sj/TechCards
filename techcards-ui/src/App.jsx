@@ -8,6 +8,7 @@ import Home from './_root/pages/Home';
 import Account from './_root/pages/Account';
 import UserAuthPage from './_auth/UserAuthPage';
 import UserPrivateRoute from './utils/UserPrivateRoute';
+import Create from './_root/pages/Create';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route element={<RootLayout/>}>
             <Route path='/feed' element={<Feed />} />
             <Route path='/account' element={<Account />} />
+            <Route path='/create' element={<Create />} />
           </Route>
         </Route>
         <Route index element={<Home />}/>

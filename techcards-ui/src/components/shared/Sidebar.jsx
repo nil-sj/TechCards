@@ -15,6 +15,7 @@ import {
   TooltipTrigger,
   TooltipProvider
 } from "@/components/ui/tooltip"
+import { SquarePlus } from 'lucide-react';
 
 const Sidebar = () => {
   return (
@@ -76,6 +77,20 @@ const Sidebar = () => {
               </Link>
             </TooltipTrigger>
             <TooltipContent side="right">Favorites</TooltipContent>
+          </Tooltip>
+          </TooltipProvider>
+          <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link
+                to='/create'
+                className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+              >
+                <SquarePlus className="h-5 w-5" />
+                <span className="sr-only">Create</span>
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent side="right">Create</TooltipContent>
           </Tooltip>
           </TooltipProvider>
         </nav>
